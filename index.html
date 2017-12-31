@@ -21,7 +21,7 @@ and open the template in the editor.
                 var shotpercentageweight = 0.5;
                 
                 //adjustment moving RLCS average up to 1.0
-                var adjustment = 1.5;
+                var adjustment = 0.34852;
                 
                 //storing form data
                 var score = parseInt(document.getElementById("score").value);
@@ -31,6 +31,8 @@ and open the template in the editor.
                 var shots = parseInt(document.getElementById("shots").value);
                 //var mvp = document.getElementById("mvp").value;
                 var overtime = parseInt(document.getElementById("overtime").value);
+                
+                //check if inputs are empty and prevent submission
 
                 //reset accolades values to zero before beginning calculations
                 var accolades = 0;
@@ -74,8 +76,8 @@ and open the template in the editor.
                 matchtime = (matchtime + overtime)/60;
                 
                 //calculate final rating
-                var rating = ((adjscore * adjscoreweight) + (goals * goalsweight) + (assists * assistsweight) + 
-                        (saves * savesweight) + (shots * shotsweight) + (shotpercentage * shotpercentageweight))*(1/matchtime)*adjustment;
+                var rating = (((adjscore * adjscoreweight) + (goals * goalsweight) + (assists * assistsweight) + 
+                        (saves * savesweight) + (shots * shotsweight) + (shotpercentage * shotpercentageweight))*(1/matchtime))+adjustment;
                 
                 //shorten rating to two decimal places
                 var finalrating = rating.toFixed(2);
@@ -92,42 +94,42 @@ and open the template in the editor.
             <div class="form-group">
               <label for="score" class="col-sm-2 control-label">Score</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="score" placeholder="350">
+                <input type="text" class="form-control" id="score" placeholder="350" required>
               </div>
             </div>
             
             <div class="form-group">
               <label for="goals" class="col-sm-2 control-label">Goals</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="goals" placeholder="3">
+                <input type="text" class="form-control" id="goals" placeholder="3" required>
               </div>
             </div>
             
             <div class="form-group">
               <label for="assists" class="col-sm-2 control-label">Assists</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="assists" placeholder="2">
+                <input type="text" class="form-control" id="assists" placeholder="2" required>
               </div>
             </div>
             
             <div class="form-group">
               <label for="saves" class="col-sm-2 control-label">Saves</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="saves" placeholder="1">
+                <input type="text" class="form-control" id="saves" placeholder="1" required>
               </div>
             </div>
             
             <div class="form-group">
               <label for="shots" class="col-sm-2 control-label">Shots</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="shots" placeholder="5">
+                <input type="text" class="form-control" id="shots" placeholder="5" required>
               </div>
             </div>
             
             <div class="form-group">
               <label for="overtime" class="col-sm-2 control-label">OT (seconds)</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="overtime" placeholder="126">
+                <input type="text" class="form-control" id="overtime" placeholder="126" required>
               </div>
             </div>
         <!--
@@ -142,7 +144,7 @@ and open the template in the editor.
         -->
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <button type="button" class="btn btn-primary" onclick="calculate()">Calculate</button>
+                <button type="button" class="btn btn-primary" onclick="return calculate()">Calculate</button>
               </div>
             </div>
         </form>
