@@ -21,7 +21,7 @@ and open the template in the editor.
                 var shotpercentageweight = 0.5;
                 
                 //adjustment moving RLCS average up to 1.0
-                var adjustment = 0.34852;
+                var adjustment = 1.54;
                 
                 //storing form data
                 var score = parseInt(document.getElementById("score").value);
@@ -32,7 +32,13 @@ and open the template in the editor.
                 //var mvp = document.getElementById("mvp").value;
                 var overtime = parseInt(document.getElementById("overtime").value);
                 
-                //check if inputs are empty and prevent submission
+                //form validation
+                
+                
+                //prevent division by 0 for shooting percentage
+                if (shots === 0){
+                    shots = 1;
+                }
 
                 //reset accolades values to zero before beginning calculations
                 var accolades = 0;
@@ -77,7 +83,7 @@ and open the template in the editor.
                 
                 //calculate final rating
                 var rating = (((adjscore * adjscoreweight) + (goals * goalsweight) + (assists * assistsweight) + 
-                        (saves * savesweight) + (shots * shotsweight) + (shotpercentage * shotpercentageweight))*(1/matchtime))+adjustment;
+                        (saves * savesweight) + (shots * shotsweight) + (shotpercentage * shotpercentageweight))*(1/matchtime))*adjustment;
                 
                 //shorten rating to two decimal places
                 var finalrating = rating.toFixed(2);
