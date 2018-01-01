@@ -116,6 +116,141 @@
     
             }
         </script>
+        <style>
+              navbar {
+                background-color: #193f6b!important;
+              }
+              .navbar .navbar-brand {
+                color: #88bbd6;
+              }
+              .navbar .navbar-brand:hover,
+              .navbar .navbar-brand:focus {
+                color: #193f6b;
+              }
+              .navbar .navbar-text {
+                color: #88bbd6;
+              }
+              .navbar .navbar-nav .nav-link {
+                color: #88bbd6;
+                border-radius: .25rem;
+                margin: 0 0.25em;
+              }
+              .navbar .navbar-nav .nav-link:not(.disabled):hover,
+              .navbar .navbar-nav .nav-link:not(.disabled):focus {
+                color: #193f6b;
+              }
+              .navbar .navbar-nav .nav-item.active .nav-link,
+              .navbar .navbar-nav .nav-item.active .nav-link:hover,
+              .navbar .navbar-nav .nav-item.active .nav-link:focus,
+              .navbar .navbar-nav .nav-item.show .nav-link,
+              .navbar .navbar-nav .nav-item.show .nav-link:hover,
+              .navbar .navbar-nav .nav-item.show .nav-link:focus {
+                color: #193f6b;
+                background-color: #99d3df;
+              }
+              .navbar .navbar-toggle {
+                border-color: #99d3df;
+              }
+              .navbar .navbar-toggle:hover,
+              .navbar .navbar-toggle:focus {
+                background-color: #99d3df;
+              }
+              .navbar .navbar-toggle .navbar-toggler-icon {
+                color: #88bbd6;
+              }
+              .navbar .navbar-collapse,
+              .navbar .navbar-form {
+                border-color: #88bbd6;
+              }
+              .navbar .navbar-link {
+                color: #88bbd6;
+              }
+              .navbar .navbar-link:hover {
+                color: #193f6b;
+              }
+
+              @media (max-width: 575px) {
+                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+                  color: #88bbd6;
+                }
+                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+                  color: #193f6b;
+                }
+                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+                  color: #193f6b;
+                  background-color: #99d3df;
+                }
+              }
+
+              @media (max-width: 767px) {
+                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+                  color: #88bbd6;
+                }
+                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+                  color: #193f6b;
+                }
+                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+                  color: #193f6b;
+                  background-color: #99d3df;
+                }
+              }
+
+              @media (max-width: 991px) {
+                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+                  color: #88bbd6;
+                }
+                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+                  color: #193f6b;
+                }
+                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+                  color: #193f6b;
+                  background-color: #99d3df;
+                }
+              }
+
+              @media (max-width: 1199px) {
+                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+                  color: #88bbd6;
+                }
+                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+                  color: #193f6b;
+                }
+                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+                  color: #193f6b;
+                  background-color: #99d3df;
+                }
+              }
+
+              .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+                color: #88bbd6;
+              }
+              .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+              .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+                color: #193f6b;
+              }
+              .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+                color: #193f6b;
+                background-color: #99d3df;
+              }
+              .jumbotron{
+                background-color: #93D3DF!important;
+              }
+              .Absolute-Center {
+                margin: auto;
+                position: absolute;
+                top: 80px; left: 0; bottom: 0; right: 0;
+              }
+
+              .Absolute-Center.is-Responsive {
+                width: 50%;
+                min-width: 200px;
+                max-width: 400px;
+              }
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
@@ -138,78 +273,67 @@
               </ul>
             </div>
         </nav>
-        
-        <div style="width:300px;margin-left:35%;">
-        <h1>Rating 1.0 Calculator</h1>
-        <form class="form-horizontal">
-            <div class="form-group">
-              <label for="score" class="col-sm-2 control-label">Score</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="score" placeholder="350" onchange="validateForm()">
-              </div>
+    <div class="Absolute-Center is-Responsive">
+        <div class="card card-outline-secondary">
+            <div class="card-header">
+                <h3 class="mb-0">Rating 1.0 Calculator</h3>
             </div>
-            
-            <div class="form-group">
-              <label for="goals" class="col-sm-2 control-label">Goals</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="goals" placeholder="3" onchange="validateForm()">
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="assists" class="col-sm-2 control-label">Assists</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="assists" placeholder="2" onchange="validateForm()">
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="saves" class="col-sm-2 control-label">Saves</label>
-              <div class="col-sm-10">
-                  <input type="text" class="form-control" id="saves" placeholder="1" onchange="validateForm()">
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="shots" class="col-sm-2 control-label">Shots</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="shots" placeholder="5" onchange="validateForm()">
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label for="overtime" class="col-sm-2 control-label">OT (seconds)</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="overtime" placeholder="126" onchange="validateForm()">
-              </div>
-            </div>
-        <!--
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="mvp">
-                    <label class="form-check-label" for="mvp">
-                      MVP
-                    </label>
-                </div>
-            </div>
-        -->
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <button type="button" class="btn btn-primary" onclick="return validateForm()">Calculate</button>
-              </div>
-            </div>
-        </form>
-            <div style="clear: both">
-                <h1 style="float: left">Rating:</h1>
-                <h1 id="finalRating" style="float: right"></h1>
+            <div class="card-block">
+                <form class="form" role="form" autocomplete="off">
+                    <div class="form-group row">
+                        <label for="score" class="col-sm-4 col-form-label">Score</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="score" placeholder="350" onchange="validateForm()">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="goals" class="col-sm-4 col-form-label">Goals</label>
+                        <div class="col-sm-8">
+                        <input type="text" class="form-control" id="goals" placeholder="3" onchange="validateForm()">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="assists" class="col-sm-4 col-form-label">Assists</label>
+                        <div class="col-sm-8">
+                        <input type="text" class="form-control" id="assists" placeholder="2" onchange="validateForm()">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="saves" class="col-sm-4 col-form-label">Saves</label>
+                        <div class="col-sm-8">
+                        <input type="text" class="form-control" id="saves" placeholder="1" onchange="validateForm()">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="saves" class="col-sm-4 col-form-label">Shots</label>
+                        <div class="col-sm-8">
+                        <input type="text" class="form-control" id="shots" placeholder="5" onchange="validateForm()">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="saves" class="col-sm-4 col-form-label">OT (sec)</label>
+                        <div class="col-sm-8">
+                        <input type="text" class="form-control" id="overtime" placeholder="0" onchange="validateForm()">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-lg float-left" onclick="return validateForm()">Calculate</button>
+                    </div>
+                </form>
             </div>
         </div>
-        <br>
-        <br>
-        <br>
+        
+        <div style="clear: both">
+            <h1 style="float: left">Rating:</h1>
+            <h1 id="finalRating" style="float: right"></h1>
+        </div>
+            <br>
+            <br>
+            <br>
         <div>
-        <p id="errormsg" style="color:red;"></p>
+            <p id="errormsg" style="color:red;"></p>
         </div>
-        
+            
+    </div>
     </body>
 </html>
