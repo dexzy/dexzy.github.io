@@ -11,17 +11,11 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script>
-            function calculate(){
-                //setting static weights
-                var adjscoreweight = 0.25;
-                var goalsweight = 1;
-                var assistsweight = 0.75;
-                var savesweight = 0.6;
-                var shotsweight = 0.4;
-                var shotpercentageweight = 0.5;
+            function validateForm(){
+                //clear previous rating if it exists
+                var ratingOverwrite = "";
                 
-                //adjustment moving RLCS average up to 1.0
-                var adjustment = 1.54;
+                document.getElementById("finalRating").innerHTML = ratingOverwrite;
                 
                 //storing form data
                 var score = parseInt(document.getElementById("score").value);
@@ -33,7 +27,35 @@ and open the template in the editor.
                 var overtime = parseInt(document.getElementById("overtime").value);
                 
                 //form validation
+                var errormsg = "";
+                if (isNaN(score) || isNaN(goals) || isNaN(assists) || isNaN(saves) || isNaN(shots) || isNaN(overtime)) {
+                    errormsg = "Error: Please fill all fields with integer values.";
+                } else {
+                    calculate();
+                }
+                document.getElementById("errormsg").innerHTML = errormsg;
+            }
+            function calculate(){
                 
+                //storing form data
+                var score = parseInt(document.getElementById("score").value);
+                var goals = parseInt(document.getElementById("goals").value);
+                var assists = parseInt(document.getElementById("assists").value);
+                var saves = parseInt(document.getElementById("saves").value);
+                var shots = parseInt(document.getElementById("shots").value);
+                //var mvp = document.getElementById("mvp").value;
+                var overtime = parseInt(document.getElementById("overtime").value);
+                
+                //setting static weights
+                var adjscoreweight = 0.25;
+                var goalsweight = 1;
+                var assistsweight = 0.75;
+                var savesweight = 0.6;
+                var shotsweight = 0.4;
+                var shotpercentageweight = 0.5;
+                
+                //adjustment moving RLCS average up to 1.0
+                var adjustment = 1.54;
                 
                 //prevent division by 0 for shooting percentage
                 if (shots === 0){
@@ -109,42 +131,42 @@ and open the template in the editor.
             <div class="form-group">
               <label for="score" class="col-sm-2 control-label">Score</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="score" placeholder="350" required>
+                <input type="text" class="form-control" id="score" placeholder="350" required/>
               </div>
             </div>
             
             <div class="form-group">
               <label for="goals" class="col-sm-2 control-label">Goals</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="goals" placeholder="3" required>
+                <input type="text" class="form-control" id="goals" placeholder="3" required/>
               </div>
             </div>
             
             <div class="form-group">
               <label for="assists" class="col-sm-2 control-label">Assists</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="assists" placeholder="2" required>
+                <input type="text" class="form-control" id="assists" placeholder="2" required/>
               </div>
             </div>
             
             <div class="form-group">
               <label for="saves" class="col-sm-2 control-label">Saves</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="saves" placeholder="1" required>
+                <input type="text" class="form-control" id="saves" placeholder="1" required/>
               </div>
             </div>
             
             <div class="form-group">
               <label for="shots" class="col-sm-2 control-label">Shots</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="shots" placeholder="5" required>
+                <input type="text" class="form-control" id="shots" placeholder="5" required/>
               </div>
             </div>
             
             <div class="form-group">
               <label for="overtime" class="col-sm-2 control-label">OT (seconds)</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="overtime" placeholder="126" required>
+                <input type="text" class="form-control" id="overtime" placeholder="126" required/>
               </div>
             </div>
         <!--
@@ -159,7 +181,7 @@ and open the template in the editor.
         -->
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <button type="button" class="btn btn-primary" onclick="return calculate()">Calculate</button>
+                <button type="button" class="btn btn-primary" onclick="return validateForm()">Calculate</button>
               </div>
             </div>
         </form>
@@ -167,6 +189,7 @@ and open the template in the editor.
                 <h1 style="float: left">Rating:</h1>
                 <h1 id="finalRating" style="float: right"></h1>
             </div>
+        <p id="errormsg" style="color:red;"></p>
         </div>
         
     </body>
