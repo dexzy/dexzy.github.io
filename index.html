@@ -89,6 +89,15 @@ and open the template in the editor.
                 var finalrating = rating.toFixed(2);
                 
                 document.getElementById("finalRating").innerHTML = finalrating; 
+                
+                //change color of rating based on rating value
+                if (finalrating < 0.75){
+                    document.getElementById("finalRating").style.color="red";
+                } else if (finalrating >= 0.75 && finalrating <= 1.25){
+                    document.getElementById("finalRating").style.color="orange";
+                } else if (finalrating > 1.25){
+                    document.getElementById("finalRating").style.color="green";
+                }
     
             }
         </script>
