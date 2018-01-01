@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rocket League Rating Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+        <link rel="icon" href="images/favicon.ico">
+        <script>
+            function validateForm(){
+                //clear previous rating if it exists
+                var ratingOverwrite = "";
+                
+                document.getElementById("finalRating").innerHTML = ratingOverwrite;
+                
+                //storing form data
+                var score = parseInt(document.getElementById("score").value);
+                var goals = parseInt(document.getElementById("goals").value);
+                var assists = parseInt(document.getElementById("assists").value);
+                var saves = parseInt(document.getElementById("saves").value);
+                var shots = parseInt(document.getElementById("shots").value);
+                //var mvp = document.getElementById("mvp").value;
+                var overtime = parseInt(document.getElementById("overtime").value);
+                
+                //form validation
+                var errormsg = "";
+                if (isNaN(score) || isNaN(goals) || isNaN(assists) || isNaN(saves) || isNaN(shots) || isNaN(overtime)) {
+                    errormsg = "Error: Please fill all fields with integer values.";
+                } else if ((score < 0) || (goals < 0) || (assists < 0) || (saves < 0) || (shots < 0) || (overtime < 0)){
+                    errormsg = "Error: Input positive numbers only.";
+                } else {
+                    calculate();
+                }
+                document.getElementById("errormsg").innerHTML = errormsg;
+            }
+            function calculate(){
+                
+                //storing form data
+                var score = parseInt(document.getElementById("score").value);
+                var goals = parseInt(document.getElementById("goals").value);
+                var assists = parseInt(document.getElementById("assists").value);
+                var saves = parseInt(document.getElementById("saves").value);
+                var shots = parseInt(document.getElementById("shots").value);
+                //var mvp = document.getElementById("mvp").value;
+                var overtime = parseInt(document.getElementById("overtime").value);
+                
+                //setting static weights
+                var adjscoreweight = 0.25;
+                var goalsweight = 1;
+                var assistsweight = 0.75;
+                var savesweight = 0.6;
+                var shotsweight = 0.4;
+                var shotpercentageweight = 0.5;
+                
+                //adjustment moving RLCS average up to 1.0
+                var adjustment = 1.54;
+
+                //reset accolades values to zero before beginning calculations
+                var accolades = 0;
+                //var mvpscore = 0;
+                
+                //calculate score gained from accolades
+                if (goals == 3){
+                    accolades = accolades + 25;
+                } else if (goals == 6){
+                    accolades = accolades + 50;
+                }
+                
+                if (assists == 3){
+                    accolades = accolades + 25;
+                } else if (assists == 6){
+                    accolades = accolades + 50;
+                }
+                
+                if (saves == 3){
+                    accolades = accolades + 25;
+                } else if (saves == 6){
+                    accolades = accolades + 50;
+                }
+                
+                //if (mvp === TRUE){
+               //     mvpscore = 50;
+               // }
+                
+                //calculate total score gained from accolades
+                accolades = accolades + (goals * 50) + (assists * 25) + (saves * 25) 
+                        + (shots * 15);
+                
+                //calculate adjusted score
+                var adjscore = (score - accolades)/100;
+                
+                //calculate shooting percentage
+                var shotpercentage = shots > 0 ? (goals / shots) : 0;
+                
+                //setting full matchtime
+                var matchtime = 300;
+                matchtime = (matchtime + overtime)/60;
+                
+                //calculate final rating
+                var rating = (((adjscore * adjscoreweight) + (goals * goalsweight) + (assists * assistsweight) + 
+                        (saves * savesweight) + (shots * shotsweight) + (shotpercentage * shotpercentageweight))*(1/matchtime))*adjustment;
+                
+                //shorten rating to two decimal places
+                var finalrating = rating.toFixed(2);
+                
+                document.getElementById("finalRating").innerHTML = finalrating; 
+              
+                //change color of rating based on rating value
+                if (finalrating < 0.75){
+                    document.getElementById("finalRating").style.color="red";
+                } else if (finalrating >= 0.75 && finalrating <= 1.25){
+                    document.getElementById("finalRating").style.color="orange";
+                } else if (finalrating > 1.25){
+                    document.getElementById("finalRating").style.color="green";
+                }
+    
+            }
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleCenteredNav" aria-controls="navbarsExampleCenteredNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Rating 1.0</a>
+
+            <div class="collapse navbar-collapse justify-content-md-left" id="navbarsExampleCenteredNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="calculator.html">Calculator <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Historical Data</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+        
+        <div style="width:300px;margin-left:35%;">
+        <h1>Rating 1.0 Calculator</h1>
+        <form class="form-horizontal">
+            <div class="form-group">
+              <label for="score" class="col-sm-2 control-label">Score</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="score" placeholder="350" onchange="validateForm()">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="goals" class="col-sm-2 control-label">Goals</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="goals" placeholder="3" onchange="validateForm()">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="assists" class="col-sm-2 control-label">Assists</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="assists" placeholder="2" onchange="validateForm()">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="saves" class="col-sm-2 control-label">Saves</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="saves" placeholder="1" onchange="validateForm()">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="shots" class="col-sm-2 control-label">Shots</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="shots" placeholder="5" onchange="validateForm()">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="overtime" class="col-sm-2 control-label">OT (seconds)</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="overtime" placeholder="126" onchange="validateForm()">
+              </div>
+            </div>
+        <!--
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="mvp">
+                    <label class="form-check-label" for="mvp">
+                      MVP
+                    </label>
+                </div>
+            </div>
+        -->
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-primary" onclick="return validateForm()">Calculate</button>
+              </div>
+            </div>
+        </form>
+            <div style="clear: both">
+                <h1 style="float: left">Rating:</h1>
+                <h1 id="finalRating" style="float: right"></h1>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
+        <p id="errormsg" style="color:red;"></p>
+        </div>
+        
+    </body>
+</html>
