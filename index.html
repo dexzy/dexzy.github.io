@@ -59,15 +59,10 @@ and open the template in the editor.
                 
                 //adjustment moving RLCS average up to 1.0
                 var adjustment = 1.54;
-                
-                //prevent division by 0 for shooting percentage
-                if (shots === 0){
-                    shots = 1;
-                }
 
                 //reset accolades values to zero before beginning calculations
                 var accolades = 0;
-                var mvpscore = 0;
+                //var mvpscore = 0;
                 
                 //calculate score gained from accolades
                 if (goals == 3){
@@ -100,7 +95,7 @@ and open the template in the editor.
                 var adjscore = (score - accolades)/100;
                 
                 //calculate shooting percentage
-                var shotpercentage = (goals / shots);
+                var shotpercentage = shots > 0 ? (goals / shots) : 0;
                 
                 //setting full matchtime
                 var matchtime = 300;
@@ -114,7 +109,7 @@ and open the template in the editor.
                 var finalrating = rating.toFixed(2);
                 
                 document.getElementById("finalRating").innerHTML = finalrating; 
-                
+              
                 //change color of rating based on rating value
                 if (finalrating < 0.75){
                     document.getElementById("finalRating").style.color="red";
@@ -192,6 +187,11 @@ and open the template in the editor.
                 <h1 style="float: left">Rating:</h1>
                 <h1 id="finalRating" style="float: right"></h1>
             </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
         <p id="errormsg" style="color:red;"></p>
         </div>
         
