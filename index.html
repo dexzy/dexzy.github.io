@@ -30,6 +30,8 @@ and open the template in the editor.
                 var errormsg = "";
                 if (isNaN(score) || isNaN(goals) || isNaN(assists) || isNaN(saves) || isNaN(shots) || isNaN(overtime)) {
                     errormsg = "Error: Please fill all fields with integer values.";
+                } else if ((score < 0) || (goals < 0) || (assists < 0) || (saves < 0) || (shots < 0) || (overtime < 0)){
+                    errormsg = "Error: Input positive numbers only.";
                 } else {
                     calculate();
                 }
