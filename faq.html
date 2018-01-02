@@ -202,7 +202,7 @@
             </div>
             <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
               <div class="card-block">
-                Similar to the NBA's PER system, which was developed in the 1960's, the Rating system applies weights to each of the values found in the post-match scoreboard. Similar to PER, Rating is a per-minute statistic. This is why OT time is important when calculating the Rating. Score is the only value that is adjusted before applying the weight, as score can be gained from goals, assists, saves, and shots, which are already accounted for in the Rating system. Once the raw Rating is determined, it is multiplied by a single number that is used to set the average rating to 1.0, to improve usability.
+                Similar to the NBA's PER system, which was developed in the 1960's, the Rating system applies weights to each of the values found in the post-match scoreboard. Similar to PER, Rating is a per-minute statistic. This is why OT time is important when calculating the Rating. Score is the only value that is adjusted before applying the weight, as score can be gained from goals, assists, saves, and shots, which are already accounted for in the Rating system. Once the raw Rating is determined, it is multiplied by a single number that is used to set the median rating to 1.0, to improve usability.
               </div>
             </div>
           </div>
@@ -210,13 +210,13 @@
             <div class="card-header" role="tab" id="headingThree">
               <h5 class="mb-0">
                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Why is the average 1.0?
+                  Why is the median 1.0?
                 </a>
               </h5>
             </div>
             <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
               <div class="card-block">
-                Using thousands of matches worth of data from all four RLCS seasons, I found that the average raw Rating was around 0.65. In order to make the system more user-friendly, the formula multiplies your raw Rating by a number just to bring the average up to 1.0. Ratings above 1.0 are considered good, while Ratings below 1.0 are considered bad.
+                Using thousands of matches worth of data from all four RLCS seasons, I found that the median raw Rating was around 0.65. In order to make the system more user-friendly, the formula multiplies your raw Rating by a number just to bring the median up to 1.0. Ratings above 1.0 are considered good, while Ratings below 1.0 are considered bad.
               </div>
             </div>
           </div>
@@ -259,6 +259,20 @@
             <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
               <div class="card-block">
                 Similar to the NBA's PER system, Rating is a per-minute statistic. Overtime matters because if a player gets 6 shots in 5 minutes, that is more efficient than a player getting 6 shots in 10 minutes. Rating is all about how efficient a player was during a match, so overtime must be included in that calculation.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingSix">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Where does the percentile data come from?
+                </a>
+              </h5>
+            </div>
+            <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+              <div class="card-block">
+                The percentile feedback given when using the Rating calculator app was sourced directly from RLCS Seasons 3 and 4. Thousands of matches worth of Rating data means that you can confidently compare your rating to the Ratings of the pros. 
               </div>
             </div>
           </div>
