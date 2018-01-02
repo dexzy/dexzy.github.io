@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Rating FAQ</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <style>
+          .navbar {
+            background-color: #210f1f!important;
+          }
+          .navbar .navbar-brand {
+            color: #ecf0f1;
+          }
+          .navbar .navbar-brand:hover,
+          .navbar .navbar-brand:focus {
+            color: #ecdbff;
+          }
+          .navbar .navbar-text {
+            color: #ecf0f1;
+          }
+          .navbar .navbar-nav .nav-link {
+            color: #ecf0f1;
+            border-radius: .25rem;
+            margin: 0 0.25em;
+          }
+          .navbar .navbar-nav .nav-link:not(.disabled):hover,
+          .navbar .navbar-nav .nav-link:not(.disabled):focus {
+            color: #ecdbff;
+          }
+          .navbar .navbar-nav .nav-item.active .nav-link,
+          .navbar .navbar-nav .nav-item.active .nav-link:hover,
+          .navbar .navbar-nav .nav-item.active .nav-link:focus,
+          .navbar .navbar-nav .nav-item.show .nav-link,
+          .navbar .navbar-nav .nav-item.show .nav-link:hover,
+          .navbar .navbar-nav .nav-item.show .nav-link:focus {
+            color: #ecdbff;
+            background-color: #4b2347;
+          }
+          .navbar .navbar-toggle {
+            border-color: #4b2347;
+          }
+          .navbar .navbar-toggle:hover,
+          .navbar .navbar-toggle:focus {
+            background-color: #4b2347;
+          }
+          .navbar .navbar-toggle .navbar-toggler-icon {
+            color: #ecf0f1;
+          }
+          .navbar .navbar-collapse,
+          .navbar .navbar-form {
+            border-color: #ecf0f1;
+          }
+          .navbar .navbar-link {
+            color: #ecf0f1;
+          }
+          .navbar .navbar-link:hover {
+            color: #ecdbff;
+          }
+
+          @media (max-width: 575px) {
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+              color: #ecf0f1;
+            }
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+              color: #ecdbff;
+            }
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+              color: #ecdbff;
+              background-color: #4b2347;
+            }
+          }
+
+          @media (max-width: 767px) {
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+              color: #ecf0f1;
+            }
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+              color: #ecdbff;
+            }
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+              color: #ecdbff;
+              background-color: #4b2347;
+            }
+          }
+
+          @media (max-width: 991px) {
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+              color: #ecf0f1;
+            }
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+              color: #ecdbff;
+            }
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+              color: #ecdbff;
+              background-color: #4b2347;
+            }
+          }
+
+          @media (max-width: 1199px) {
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+              color: #ecf0f1;
+            }
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+              color: #ecdbff;
+            }
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+              color: #ecdbff;
+              background-color: #4b2347;
+            }
+          }
+
+          .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+            color: #ecf0f1;
+          }
+          .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+          .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+            color: #ecdbff;
+          }
+          .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+            color: #ecdbff;
+            background-color: #4b2347;
+          }
+          .jumbotron{
+            background-color: #cb5dbe!important;
+          }
+          .Absolute-Center {
+            margin: auto;
+            position: absolute;
+            top: 80px; left: 0; bottom: 0; right: 0;
+          }
+
+          .Absolute-Center.is-Responsive {
+            width: 50%;
+            min-width: 200px;
+            max-width: 600px;
+          }
+    </style>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleCenteredNav" aria-controls="navbarsExampleCenteredNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Rating 1.0</a>
+
+      <div class="collapse navbar-collapse justify-content-md-left" id="navbarsExampleCenteredNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="calculator.html">Calculator</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="faq.html">FAQ <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Historical Data</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      
+    <div class="Absolute-Center is-Responsive">  
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  What is Rating 1.0?
+                </a>
+              </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+              <div class="card-block">
+                The Rating 1.0 system is the successor to the Rocket League PER system originally developed by dexzy in 2017. The Rating system aims to give you a general understanding of how well you played in any particular match based on the final scoreboard. Ratings above 1.0 are considered good, while under 1.0 is considered bad. 
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  How is Rating calculated?
+                </a>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="card-block">
+                Similar to the NBA's PER system, which was developed in the 1960's, the Rating system applies weights to each of the values found in the post-match scoreboard. Score is the only value that is adjusted before applying the weight, as score can be gained from goals, assists, saves, and shots, which are already accounted for in the Rating system. Once the raw Rating is determined, it is multiplied by a single number that is used to set the average rating to 1.0, to improve usability.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingThree">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Why is the average 1.0?
+                </a>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="card-block">
+                Using thousands of matches worth of data from all four RLCS seasons, I found that the average raw Rating was around 0.65. In order to make the system more user-friendly, the formula multiplies your raw Rating by a number just to bring the average up to 1.0. Ratings above 1.0 are considered good, while Ratings below 1.0 are considered bad.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingFour">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Can the Rating formula be improved?
+                </a>
+              </h5>
+            </div>
+            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+              <div class="card-block">
+                Yes! Rating can certainly be improved. Right now we are limited by the data given to us on the post-match scoreboard. We can tell that other data, like clears, demos, bumps, and touches on the ball are tracked by the game (they appear in the winning-screen accolades). Once Psyonix makes this data visible for all players, the Rating system will be adjusted to account for those stats. This Rating system would heavily benefit from the release of an API for Rocket League, as Rating could be calculated on the fly for live matches.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingFive">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  What is adjusted score?
+                </a>
+              </h5>
+            </div>
+            <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+              <div class="card-block">
+                Adjusted score is just the score seen on the post-match scoreboard minus score gained from goals, assists, shots, and saves (or the accolades associated with gaining 3 goals, saves, or assists). Adjusted score also accounts for the score gained from the MVP accolade. Adjusted score is meant to be a more true indicator of the immeasurable actions that happen over the course of a regular match. 
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      
+    </body>
+</html>

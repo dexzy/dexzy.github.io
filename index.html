@@ -5,131 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="images/favicon.ico">
 
-    <title>Rocket League Rating Calculator</title>
+    <title>Rating 1.0 Home</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <style>
-navbar {
-  background-color: #193f6b!important;
-}
-.navbar .navbar-brand {
-  color: #88bbd6;
-}
-.navbar .navbar-brand:hover,
-.navbar .navbar-brand:focus {
-  color: #193f6b;
-}
-.navbar .navbar-text {
-  color: #88bbd6;
-}
-.navbar .navbar-nav .nav-link {
-  color: #88bbd6;
-  border-radius: .25rem;
-  margin: 0 0.25em;
-}
-.navbar .navbar-nav .nav-link:not(.disabled):hover,
-.navbar .navbar-nav .nav-link:not(.disabled):focus {
-  color: #193f6b;
-}
-.navbar .navbar-nav .nav-item.active .nav-link,
-.navbar .navbar-nav .nav-item.active .nav-link:hover,
-.navbar .navbar-nav .nav-item.active .nav-link:focus,
-.navbar .navbar-nav .nav-item.show .nav-link,
-.navbar .navbar-nav .nav-item.show .nav-link:hover,
-.navbar .navbar-nav .nav-item.show .nav-link:focus {
-  color: #193f6b;
-  background-color: #99d3df;
-}
-.navbar .navbar-toggle {
-  border-color: #99d3df;
-}
-.navbar .navbar-toggle:hover,
-.navbar .navbar-toggle:focus {
-  background-color: #99d3df;
-}
-.navbar .navbar-toggle .navbar-toggler-icon {
-  color: #88bbd6;
-}
-.navbar .navbar-collapse,
-.navbar .navbar-form {
-  border-color: #88bbd6;
-}
-.navbar .navbar-link {
-  color: #88bbd6;
-}
-.navbar .navbar-link:hover {
-  color: #193f6b;
-}
+      .navbar {
+        background-color: #210f1f!important;
+      }
+      .navbar .navbar-brand {
+        color: #ecf0f1;
+      }
+      .navbar .navbar-brand:hover,
+      .navbar .navbar-brand:focus {
+        color: #ecdbff;
+      }
+      .navbar .navbar-text {
+        color: #ecf0f1;
+      }
+      .navbar .navbar-nav .nav-link {
+        color: #ecf0f1;
+        border-radius: .25rem;
+        margin: 0 0.25em;
+      }
+      .navbar .navbar-nav .nav-link:not(.disabled):hover,
+      .navbar .navbar-nav .nav-link:not(.disabled):focus {
+        color: #ecdbff;
+      }
+      .navbar .navbar-nav .nav-item.active .nav-link,
+      .navbar .navbar-nav .nav-item.active .nav-link:hover,
+      .navbar .navbar-nav .nav-item.active .nav-link:focus,
+      .navbar .navbar-nav .nav-item.show .nav-link,
+      .navbar .navbar-nav .nav-item.show .nav-link:hover,
+      .navbar .navbar-nav .nav-item.show .nav-link:focus {
+        color: #ecdbff;
+        background-color: #4b2347;
+      }
+      .navbar .navbar-toggle {
+        border-color: #4b2347;
+      }
+      .navbar .navbar-toggle:hover,
+      .navbar .navbar-toggle:focus {
+        background-color: #4b2347;
+      }
+      .navbar .navbar-toggle .navbar-toggler-icon {
+        color: #ecf0f1;
+      }
+      .navbar .navbar-collapse,
+      .navbar .navbar-form {
+        border-color: #ecf0f1;
+      }
+      .navbar .navbar-link {
+        color: #ecf0f1;
+      }
+      .navbar .navbar-link:hover {
+        color: #ecdbff;
+      }
 
-@media (max-width: 575px) {
-  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
-    color: #88bbd6;
-  }
-  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-    color: #193f6b;
-  }
-  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
-    color: #193f6b;
-    background-color: #99d3df;
-  }
-}
+      @media (max-width: 575px) {
+        .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+          color: #ecf0f1;
+        }
+        .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+        .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+          color: #ecdbff;
+        }
+        .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+          color: #ecdbff;
+          background-color: #4b2347;
+        }
+      }
 
-@media (max-width: 767px) {
-  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
-    color: #88bbd6;
-  }
-  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-    color: #193f6b;
-  }
-  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
-    color: #193f6b;
-    background-color: #99d3df;
-  }
-}
+      @media (max-width: 767px) {
+        .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+          color: #ecf0f1;
+        }
+        .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+        .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+          color: #ecdbff;
+        }
+        .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+          color: #ecdbff;
+          background-color: #4b2347;
+        }
+      }
 
-@media (max-width: 991px) {
-  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
-    color: #88bbd6;
-  }
-  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-    color: #193f6b;
-  }
-  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
-    color: #193f6b;
-    background-color: #99d3df;
-  }
-}
+      @media (max-width: 991px) {
+        .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+          color: #ecf0f1;
+        }
+        .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+        .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+          color: #ecdbff;
+        }
+        .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+          color: #ecdbff;
+          background-color: #4b2347;
+        }
+      }
 
-@media (max-width: 1199px) {
-  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
-    color: #88bbd6;
-  }
-  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-    color: #193f6b;
-  }
-  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
-    color: #193f6b;
-    background-color: #99d3df;
-  }
-}
+      @media (max-width: 1199px) {
+        .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+          color: #ecf0f1;
+        }
+        .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+        .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+          color: #ecdbff;
+        }
+        .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+          color: #ecdbff;
+          background-color: #4b2347;
+        }
+      }
 
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
-  color: #88bbd6;
-}
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-  color: #193f6b;
-}
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
-  color: #193f6b;
-  background-color: #99d3df;
-}
+      .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #ecf0f1;
+      }
+      .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+      .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #ecdbff;
+      }
+      .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #ecdbff;
+        background-color: #4b2347;
+      }
       .jumbotron{
-          background-color: #93D3DF!important;
+          background-color: #cb5dbe!important;
       }
     </style>
 
@@ -150,6 +153,9 @@ navbar {
           </li>
           <li class="nav-item">
             <a class="nav-link" href="calculator.html">Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html">FAQ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Historical Data</a>
@@ -173,7 +179,7 @@ navbar {
           <div class="col-md-4">
             <h2>FAQ</h2>
             <p>Have questions about Rating 1.0? Feel free to explore the FAQ to get answers on common questions and to learn more about the Rating system.</p>
-            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="faq.html" role="button">View details &raquo;</a></p>
           </div>
           <div class="col-md-4">
             <h2>Calculator</h2>
@@ -182,7 +188,7 @@ navbar {
           </div>
           <div class="col-md-4">
             <h2>Historical Data</h2>
-            <p>Historical Rating data is an upcoming feature to the site. This will allow you to compare your Rating to the Rating of pro players since the beginning of RLCS. Come back soon to explore!</p>
+            <p>Historical Rating data is feature that will be released in early 2018. This will allow you to compare your Rating to the Rating of pro players since the beginning of RLCS. Come back soon to explore!</p>
             <p><a class="btn btn-secondary" href="#" role="button">Coming Soon!</a></p>
           </div>
         </div>
@@ -194,11 +200,7 @@ navbar {
     </main>
 
     <footer class="container">
-      <p>&copy; Company 2017</p>
+      <p>&copy; Rating 1.0</p>
     </footer>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"><\/script>')</script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>

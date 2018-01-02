@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rocket League Rating Calculator</title>
+        <title>Rating 1.0 Calculator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
         <link rel="icon" href="images/favicon.ico">
         <script>
             function validateForm(){
@@ -117,139 +120,139 @@
             }
         </script>
         <style>
-              navbar {
-                background-color: #193f6b!important;
-              }
-              .navbar .navbar-brand {
-                color: #88bbd6;
-              }
-              .navbar .navbar-brand:hover,
-              .navbar .navbar-brand:focus {
-                color: #193f6b;
-              }
-              .navbar .navbar-text {
-                color: #88bbd6;
-              }
-              .navbar .navbar-nav .nav-link {
-                color: #88bbd6;
-                border-radius: .25rem;
-                margin: 0 0.25em;
-              }
-              .navbar .navbar-nav .nav-link:not(.disabled):hover,
-              .navbar .navbar-nav .nav-link:not(.disabled):focus {
-                color: #193f6b;
-              }
-              .navbar .navbar-nav .nav-item.active .nav-link,
-              .navbar .navbar-nav .nav-item.active .nav-link:hover,
-              .navbar .navbar-nav .nav-item.active .nav-link:focus,
-              .navbar .navbar-nav .nav-item.show .nav-link,
-              .navbar .navbar-nav .nav-item.show .nav-link:hover,
-              .navbar .navbar-nav .nav-item.show .nav-link:focus {
-                color: #193f6b;
-                background-color: #99d3df;
-              }
-              .navbar .navbar-toggle {
-                border-color: #99d3df;
-              }
-              .navbar .navbar-toggle:hover,
-              .navbar .navbar-toggle:focus {
-                background-color: #99d3df;
-              }
-              .navbar .navbar-toggle .navbar-toggler-icon {
-                color: #88bbd6;
-              }
-              .navbar .navbar-collapse,
-              .navbar .navbar-form {
-                border-color: #88bbd6;
-              }
-              .navbar .navbar-link {
-                color: #88bbd6;
-              }
-              .navbar .navbar-link:hover {
-                color: #193f6b;
-              }
+        .navbar {
+            background-color: #210f1f!important;
+          }
+          .navbar .navbar-brand {
+            color: #ecf0f1;
+          }
+          .navbar .navbar-brand:hover,
+          .navbar .navbar-brand:focus {
+            color: #ecdbff;
+          }
+          .navbar .navbar-text {
+            color: #ecf0f1;
+          }
+          .navbar .navbar-nav .nav-link {
+            color: #ecf0f1;
+            border-radius: .25rem;
+            margin: 0 0.25em;
+          }
+          .navbar .navbar-nav .nav-link:not(.disabled):hover,
+          .navbar .navbar-nav .nav-link:not(.disabled):focus {
+            color: #ecdbff;
+          }
+          .navbar .navbar-nav .nav-item.active .nav-link,
+          .navbar .navbar-nav .nav-item.active .nav-link:hover,
+          .navbar .navbar-nav .nav-item.active .nav-link:focus,
+          .navbar .navbar-nav .nav-item.show .nav-link,
+          .navbar .navbar-nav .nav-item.show .nav-link:hover,
+          .navbar .navbar-nav .nav-item.show .nav-link:focus {
+            color: #ecdbff;
+            background-color: #4b2347;
+          }
+          .navbar .navbar-toggle {
+            border-color: #4b2347;
+          }
+          .navbar .navbar-toggle:hover,
+          .navbar .navbar-toggle:focus {
+            background-color: #4b2347;
+          }
+          .navbar .navbar-toggle .navbar-toggler-icon {
+            color: #ecf0f1;
+          }
+          .navbar .navbar-collapse,
+          .navbar .navbar-form {
+            border-color: #ecf0f1;
+          }
+          .navbar .navbar-link {
+            color: #ecf0f1;
+          }
+          .navbar .navbar-link:hover {
+            color: #ecdbff;
+          }
 
-              @media (max-width: 575px) {
-                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
-                  color: #88bbd6;
-                }
-                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-                  color: #193f6b;
-                }
-                .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
-                  color: #193f6b;
-                  background-color: #99d3df;
-                }
-              }
+          @media (max-width: 575px) {
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+              color: #ecf0f1;
+            }
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+              color: #ecdbff;
+            }
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+              color: #ecdbff;
+              background-color: #4b2347;
+            }
+          }
 
-              @media (max-width: 767px) {
-                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
-                  color: #88bbd6;
-                }
-                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-                  color: #193f6b;
-                }
-                .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
-                  color: #193f6b;
-                  background-color: #99d3df;
-                }
-              }
+          @media (max-width: 767px) {
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+              color: #ecf0f1;
+            }
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+              color: #ecdbff;
+            }
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+              color: #ecdbff;
+              background-color: #4b2347;
+            }
+          }
 
-              @media (max-width: 991px) {
-                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
-                  color: #88bbd6;
-                }
-                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-                  color: #193f6b;
-                }
-                .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
-                  color: #193f6b;
-                  background-color: #99d3df;
-                }
-              }
+          @media (max-width: 991px) {
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+              color: #ecf0f1;
+            }
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+              color: #ecdbff;
+            }
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+              color: #ecdbff;
+              background-color: #4b2347;
+            }
+          }
 
-              @media (max-width: 1199px) {
-                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
-                  color: #88bbd6;
-                }
-                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-                  color: #193f6b;
-                }
-                .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
-                  color: #193f6b;
-                  background-color: #99d3df;
-                }
-              }
+          @media (max-width: 1199px) {
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+              color: #ecf0f1;
+            }
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+              color: #ecdbff;
+            }
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+              color: #ecdbff;
+              background-color: #4b2347;
+            }
+          }
 
-              .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
-                color: #88bbd6;
-              }
-              .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-              .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-                color: #193f6b;
-              }
-              .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
-                color: #193f6b;
-                background-color: #99d3df;
-              }
-              .jumbotron{
-                background-color: #93D3DF!important;
-              }
-              .Absolute-Center {
-                margin: auto;
-                position: absolute;
-                top: 80px; left: 0; bottom: 0; right: 0;
-              }
+          .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+            color: #ecf0f1;
+          }
+          .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+          .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+            color: #ecdbff;
+          }
+          .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+            color: #ecdbff;
+            background-color: #4b2347;
+          }
+          .jumbotron{
+              background-color: #cb5dbe!important;
+          }
+          .Absolute-Center {
+            margin: auto;
+            position: absolute;
+            top: 80px; left: 0; bottom: 0; right: 0;
+          }
 
-              .Absolute-Center.is-Responsive {
-                width: 50%;
-                min-width: 200px;
-                max-width: 400px;
-              }
+          .Absolute-Center.is-Responsive {
+            width: 50%;
+            min-width: 200px;
+            max-width: 400px;
+          }
         </style>
     </head>
     <body>
@@ -268,6 +271,9 @@
                   <a class="nav-link" href="calculator.html">Calculator <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="faq.html">FAQ</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link disabled" href="#">Historical Data</a>
                 </li>
               </ul>
@@ -279,7 +285,7 @@
                 <h3 class="mb-0">Rating 1.0 Calculator</h3>
             </div>
             <div class="card-block">
-                <form class="form" role="form" autocomplete="off">
+                <form class="form" role="form" autocomplete="off" onkeypress="return event.keyCode != 13;">
                     <div class="form-group row">
                         <label for="score" class="col-sm-4 col-form-label">Score</label>
                         <div class="col-sm-8">
@@ -316,8 +322,11 @@
                         <input type="text" class="form-control" id="overtime" placeholder="0" onchange="validateForm()">
                         </div>
                     </div>
+                    <div>
+                        <p id="errormsg" style="color:red;"></p>
+                    </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-lg float-left" onclick="return validateForm()">Calculate</button>
+                        <button type="submit" class="btn btn-success btn-sm btn-block" onclick="return validateForm()">Calculate</button>
                     </div>
                 </form>
             </div>
@@ -327,13 +336,6 @@
             <h1 style="float: left">Rating:</h1>
             <h1 id="finalRating" style="float: right"></h1>
         </div>
-            <br>
-            <br>
-            <br>
-        <div>
-            <p id="errormsg" style="color:red;"></p>
-        </div>
-            
     </div>
     </body>
 </html>
