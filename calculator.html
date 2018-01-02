@@ -55,8 +55,8 @@
                 var shotsweight = 0.4;
                 var shotpercentageweight = 0.5;
                 
-                //adjustment moving RLCS average up to 1.0
-                var adjustment = 1.54;
+                //adjustment moving RLCS median up to 1.0
+                var adjustment = 1.669;
 
                 //reset accolades values to zero before beginning calculations
                 var accolades = 0;
@@ -106,6 +106,35 @@
                 //shorten rating to two decimal places
                 var finalrating = rating.toFixed(2);
                 
+                //setting percentile
+                var percentile = "";
+                
+                if (rating <= 0.11){
+                    percentile = "<1";
+                } else if (rating <= 0.33){
+                    percentile = "1-5";
+                } else if (rating <= 0.45){
+                    percentile = "5-10";
+                } else if (rating <= 0.68){
+                    percentile = "10-25";
+                } else if (rating <= 1.00){
+                    percentile = "25-50";
+                } else if (rating <= 1.39){
+                    percentile = "50-75";
+                } else if (rating <= 1.81){
+                    percentile = "75-90";
+                } else if (rating <= 2.04){
+                    percentile = "90-95";
+                } else if (rating <= 2.57){
+                    percentile = "95-99";
+                } else if (rating > 2.57){
+                    percentile = ">99";
+                }
+                
+                //display percentile
+                document.getElementById("percentile").innerHTML = percentile;
+                
+                //display rating
                 document.getElementById("finalRating").innerHTML = finalrating; 
               
                 //change color of rating based on rating value
@@ -293,9 +322,6 @@
         </nav>
     <div class="Absolute-Center is-Responsive">
         <div class="card card-outline-secondary">
-            <div class="card-header">
-                <h3 class="mb-0">Rating 1.0 Calculator</h3>
-            </div>
             <div class="card-block">
                 <form class="form" role="form" autocomplete="off" onkeypress="return event.keyCode != 13;">
                     <div class="form-group row">
@@ -345,8 +371,12 @@
         </div>
         
         <div style="clear: both">
-            <h1 style="float: left">Rating:</h1>
-            <h1 id="finalRating" style="float: right"></h1>
+            <h1 style="float: left;">Rating:</h1>
+            <h1 id="finalRating" style="float: right;"></h1>
+        </div>
+        <div style="clear: both">
+            <h2 style="float: left;">Percentile:</h2>
+            <h2 id="percentile" style="float: right;"></h2>
         </div>
     </div>
     </body>
