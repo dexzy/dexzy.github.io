@@ -202,7 +202,7 @@
             </div>
             <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
               <div class="card-block">
-                Similar to the NBA's PER system, which was developed in the 1960's, the Rating system applies weights to each of the values found in the post-match scoreboard. Score is the only value that is adjusted before applying the weight, as score can be gained from goals, assists, saves, and shots, which are already accounted for in the Rating system. Once the raw Rating is determined, it is multiplied by a single number that is used to set the average rating to 1.0, to improve usability.
+                Similar to the NBA's PER system, which was developed in the 1960's, the Rating system applies weights to each of the values found in the post-match scoreboard. Similar to PER, Rating is a per-minute statistic. This is why OT time is important when calculating the Rating. Score is the only value that is adjusted before applying the weight, as score can be gained from goals, assists, saves, and shots, which are already accounted for in the Rating system. Once the raw Rating is determined, it is multiplied by a single number that is used to set the average rating to 1.0, to improve usability.
               </div>
             </div>
           </div>
@@ -245,6 +245,20 @@
             <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
               <div class="card-block">
                 Adjusted score is just the score seen on the post-match scoreboard minus score gained from goals, assists, shots, and saves (or the accolades associated with gaining 3 goals, saves, or assists). Adjusted score also accounts for the score gained from the MVP accolade. Adjusted score is meant to be a more true indicator of the immeasurable actions that happen over the course of a regular match. 
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingSix">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Why does overtime (OT) matter?
+                </a>
+              </h5>
+            </div>
+            <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+              <div class="card-block">
+                Similar to the NBA's PER system, Rating is a per-minute statistic. Overtime matters because if a player gets 6 shots in 5 minutes, that is more efficient than a player getting 6 shots in 10 minutes. Rating is all about how efficient a player was during a match, so overtime must be included in that calculation.
               </div>
             </div>
           </div>
