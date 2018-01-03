@@ -10,7 +10,6 @@ function validateForm(){
     var assists = parseInt(document.getElementById("assists").value);
     var saves = parseInt(document.getElementById("saves").value);
     var shots = parseInt(document.getElementById("shots").value);
-    //var mvp = document.getElementById("mvp").value;
     var overtime = parseInt(document.getElementById("overtime").value);
 
     //form validation
@@ -32,8 +31,26 @@ function calculate(){
     var assists = parseInt(document.getElementById("assists").value);
     var saves = parseInt(document.getElementById("saves").value);
     var shots = parseInt(document.getElementById("shots").value);
-    //var mvp = document.getElementById("mvp").value;
     var overtime = parseInt(document.getElementById("overtime").value);
+    
+    //storing mvp checkbox value
+    var mvp;
+    
+    if (document.getElementById("mvp").checked === true){
+        mvp = 50;
+    } else {
+        mvp = 0;
+    }
+    
+    //storing radio button value
+    var match;
+    
+    if (document.getElementById("publicmatch").checked === true){
+        match = 2;
+    } else if (document.getElementById("privatematch").checked === true){
+        match = 1;
+    }
+    
 
     //setting static weights
     var adjscoreweight = 0.25;
@@ -43,12 +60,11 @@ function calculate(){
     var shotsweight = 0.4;
     var shotpercentageweight = 0.5;
 
-    //adjustment moving RLCS median up to 1.0
+    //adjustment moving median up to 1.0 to meet RLCS data
     var adjustment = 1.669;
 
     //reset accolades values to zero before beginning calculations
     var accolades = 0;
-    //var mvpscore = 0;
 
     //calculate score gained from accolades
     if (goals == 3){
@@ -69,16 +85,12 @@ function calculate(){
         accolades = accolades + 50;
     }
 
-    //if (mvp === TRUE){
-   //     mvpscore = 50;
-   // }
-
     //calculate total score gained from accolades
     accolades = accolades + (goals * 50) + (assists * 25) + (saves * 25) 
-            + (shots * 15);
+            + (shots * 15) + mvp;
 
     //calculate adjusted score
-    var adjscore = (score - accolades)/100;
+    var adjscore = ((score/match) - accolades)/100;
 
     //calculate shooting percentage
     var shotpercentage = shots > 0 ? (goals / shots) : 0;
@@ -90,6 +102,10 @@ function calculate(){
     //calculate final rating
     var rating = (((adjscore * adjscoreweight) + (goals * goalsweight) + (assists * assistsweight) + 
             (saves * savesweight) + (shots * shotsweight) + (shotpercentage * shotpercentageweight))*(1/matchtime))*adjustment;
+    
+    if (rating < 0){
+        rating = 0;
+    }
 
     //shorten rating to two decimal places
     var finalrating = rating.toFixed(2);
